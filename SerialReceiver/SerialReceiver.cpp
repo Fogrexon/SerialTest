@@ -15,11 +15,11 @@ int main()
     // USBデバイスに接続します。
     deviceHandle = CreateFile(L"\\\\.\\COM7", GENERIC_WRITE | GENERIC_READ, FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_OVERLAPPED, NULL);
     if (deviceHandle == INVALID_HANDLE_VALUE) {
+    std::cout << GetLastError() << std::endl;
         std::cout << "Failed to connect to USB device." << std::endl;
         return 1;
     }
 
-    std::cout << deviceHandle << std::endl;
 
     // WinUSBインターフェースハンドルを取得します。
     if (WinUsb_Initialize(deviceHandle, &interfaceHandle) == FALSE) {
