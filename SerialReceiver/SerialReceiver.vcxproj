@@ -156,6 +156,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SerialReceiver.cpp" />
+    <ClCompile Include="SerialRotationReader.cpp" />
+    <ClCompile Include="SimpleSerial.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SerialRotationReader.h" />
+    <ClInclude Include="SimpleSerial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
